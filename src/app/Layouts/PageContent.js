@@ -10,6 +10,11 @@ const PageContent = () => {
             <div className={pagecontent_style["card-body"]}>
                 <div className="row">
                     <BookCard />
+                    <BookCard />
+                    <BookCard />
+                    <BookCard />
+                    <BookCard />
+                    <BookCard />
                 </div>
             </div>
         </div>

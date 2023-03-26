@@ -1,0 +1,27 @@
+.browse-book-card-content{
+    display: flex;
+    background: transparent;
+    height: calc(100% - 30px);
+    border-radius: 5px;
+    margin-bottom: 30px;
+    border: none;
+}
+
+.cardbook {
+    margin-top: 10px ;
+    margin-bottom: 10px;
+}
+
+.item-text {
+    margin: 0px 10px;
+}
+
+.item-text > div {
+    text-align: left;
+}
+
+.item-text h6 {
+    overflow: hidden;
+    font-size: 1.0rem;
+    line-height: 1.3rem;
+}

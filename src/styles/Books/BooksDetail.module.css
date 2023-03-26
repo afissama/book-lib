@@ -1,0 +1,5 @@
+.cover{
+    display: flex;
+    height: calc(100% - 30px);
+    align-items: stretch;
+}

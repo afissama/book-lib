@@ -1,0 +1,9 @@
+.card-content{
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 30px);
+}
+
+.card-body{
+    padding: 20px;
+}

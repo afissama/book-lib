@@ -1,19 +1,31 @@
-import '../styles/App.css';
-import NavBar from './Layouts/Navbar';
-import PageContent from './Layouts/PageContent';
-import SideBar from './Layouts/Sidebar';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "../styles/App.css";
+import BooksDetail from "./Books/BookDetail";
+import BooksPage from "./Books/BooksPage";
+import ErrorPage from "./ErrorPage";
+import Navigation from "./Navigation";
 
-function App() {
+const router = createBrowserRouter([
+{
+  path: '/',
+  element: <Navigation />,
+  errorElement: <ErrorPage />,
+  children: [
+    {
+      path: '/',
+      element: <BooksPage />
+    },
+    {
+      path: '/book',
+      element: <BooksDetail />
+    }
+  ]
+}
+]);
+
+function App(){
   return (
-    <div className="App">
-      <SideBar />
-      <NavBar />
-      <div className='content-page'>
-        <div className='container-fluid'>
-          <PageContent />
-        </div>
-      </div>
-    </div>
+    <RouterProvider router={router} />
   );
 }
 
