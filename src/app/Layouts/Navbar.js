@@ -21,15 +21,6 @@ const NavBar = (props) => {
         </div>
 
         <div>
-          <form className={nav_style["form-control"]}>
-            <input type="text" placeholder="search here..." />
-            <a>
-              <i></i>
-            </a>
-          </form>
-        </div>
-
-        <div>
             <ul className={nav_style["user-info"]}>
                 <li>
                     <a>

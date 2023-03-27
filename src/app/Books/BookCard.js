@@ -12,7 +12,7 @@ const BookCard = (props) => {
             >
               <a href="#">
                 <img
-                  class="img-fluid rounded w-100"
+                  className="img-fluid rounded w-100"
                   src={props.coverURL}
                   alt=""
                 />

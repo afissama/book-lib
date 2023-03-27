@@ -1,66 +1,49 @@
 import BookCard from "./BookCard";
+import styles from "../../styles/Books/BooksPage.module.css";
+import { useEffect, useState } from "react";
+import { useLoaderData, useParams } from "react-router-dom";
 
-const BOOKS = [
-  {
-    author: "John SOUMANOU",
-    title: "LA GUERRE DE TROIE",
-    cover_url:
-      "https://templates.iqonic.design/booksto/html/images/browse-books/01.jpg",
-  },
-  {
-    author: "John SOUMANOU",
-    title: "LA GUERRE DE TROIE",
-    cover_url:
-      "https://templates.iqonic.design/booksto/html/images/browse-books/02.jpg",
-  },
-  {
-    author: "John SOUMANOU",
-    title: "LA GUERRE DE TROIE",
-    cover_url:
-      "https://templates.iqonic.design/booksto/html/images/browse-books/03.jpg",
-  },
-  {
-    author: "John SOUMANOU",
-    title: "LA GUERRE DE TROIE",
-    cover_url:
-      "https://templates.iqonic.design/booksto/html/images/browse-books/04.jpg",
-  },
-  {
-    author: "John SOUMANOU",
-    title: "LA GUERRE DE TROIE",
-    cover_url:
-      "https://templates.iqonic.design/booksto/html/images/browse-books/05.jpg",
-  },
-  {
-    author: "John SOUMANOU",
-    title: "LA GUERRE DE TROIE",
-    cover_url:
-      "https://templates.iqonic.design/booksto/html/images/browse-books/06.jpg",
-  },
-  {
-    author: "John SOUMANOU",
-    title: "LA GUERRE DE TROIE",
-    cover_url:
-      "https://templates.iqonic.design/booksto/html/images/browse-books/07.jpg",
-  },
-  {
-    author: "John SOUMANOU",
-    title: "LA GUERRE DE TROIE",
-    cover_url:
-      "https://templates.iqonic.design/booksto/html/images/browse-books/08.jpg",
-  },
-  {
-    author: "John SOUMANOU",
-    title: "LA GUERRE DE TROIE",
-    cover_url:
-      "https://templates.iqonic.design/booksto/html/images/browse-books/09.jpg",
-  },
-];
 
-export default function BooksPage() {
+function filterByCat(book, cat) {
+  return book.category === cat;
+}
+
+function filterByTitle(book, title) {
+  return book.title.trim().toLowerCase().includes(title.toLowerCase());
+}
+
+
+export default function BooksPage(props) {
+  const books = useLoaderData();
+  const [filteredBooks, setfilteredBooks] = useState(books);
+
+  useEffect(()=>{
+    setfilteredBooks((oldbooks) => {
+      return books;
+    });
+  },[books]);
+
+  
+  const inputChangeHandler = (event) => {
+    setfilteredBooks((oldbooks) => {
+      return books.filter((book) => {
+        return filterByTitle(book, event.target.value);
+      });
+    });
+  };
+
   return (
     <div className="row">
-      {BOOKS.map((book) => {
+      <div>
+        <form className={styles["form-control"]}>
+          <input
+            type="text"
+            placeholder="search here..."
+            onChange={inputChangeHandler}
+          />
+        </form>
+      </div>
+      {filteredBooks.map((book) => {
         return (
           <BookCard
             title={book.title}

@@ -8,10 +8,12 @@ const SideBar = (props) =>{
 
             </div>
             <ul>
-                <MenuItem label = "All"/>
-                <MenuItem label = "Art"/>
-                <MenuItem label = "Science"/>
-                <MenuItem label = "Science"/>
+                <MenuItem label = "ART" category={1}/>
+                <MenuItem label = "SCIENCE" category={2}/>
+                <MenuItem label = "BIOLOGY" category={4}/>
+                <MenuItem label = "LITERATURE" category={5}/>
+                <MenuItem label = "HEALTH" category={6}/>
+                <MenuItem label = "MOST POPULAR" category={100}/>
             </ul>
         </div>
     );

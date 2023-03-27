@@ -1,0 +1,20 @@
+
+.signIn{
+    height: 80vh;
+    position: relative;
+    padding: 50px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+.container{
+    width: 30%;
+    background-color: rgb(15, 150, 105);
+    border-radius: 5px;
+}
+
+.page{
+    height: 60%;
+}
