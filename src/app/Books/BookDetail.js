@@ -7,14 +7,14 @@ export default function BooksDetail() {
 
   return (
     <div className="row">
-      <div className="col-sm-10">
+      <div className="col-sm-12">
         <div className="description-book align-items-top row">
-          <div className="col-md-5">
+          <div className="col-md-6">
             <div className={styles.cover}>
                 <img src={`${book.cover_url}`} alt=""/>
             </div>
           </div>
-          <div className="col-md-5">
+          <div className="col-md-6">
             <div className={styles.infos}>
               <h3 className="mb-5">{book.title}</h3>
               <div className="pb-5">

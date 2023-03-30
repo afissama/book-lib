@@ -35,11 +35,14 @@ export default function BooksPage(props) {
         <form className={styles["form-control"]}>
           <input
             type="text"
-            placeholder="search here..."
+            placeholder="search book here..."
             onChange={inputChangeHandler}
           />
         </form>
       </div>
+      {filteredBooks.length === 0 && 
+        <h4>No item found</h4>
+      }
       {filteredBooks.map((book) => {
         return (
           <BookCard

@@ -1,38 +1,31 @@
 import nav_style from "../../styles/Layouts/Navbar.module.css";
 import "../../styles/Layouts/layouts.css";
+import { Link } from "react-router-dom";
+import { useRef } from "react";
 
 const NavBar = (props) => {
+  const topBarRef = useRef(null);
+
+  const navBarExpend = () => {
+    if (topBarRef.current.className === "topnav") {
+      topBarRef.current.className += " responsive";
+    } else {
+      topBarRef.current.className = 'topnav';
+    }
+  };
+
+
   return (
     <div className={nav_style.navbar}>
-
-      <nav className={nav_style["navbar-expand"]}>
-        <div style={{display: "block", marginLeft: 0, padding: "20px 0"}}>
-          <h5>Shop</h5>
-          <nav>
-            <ul className={nav_style["ul-link"]}>
-              <li>
-                <a href="#">Home</a>
-              </li>
-              <li>
-                <a href="#">Home Page</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-
-        <div>
-            <ul className={nav_style["user-info"]}>
-                <li>
-                    <a>
-                        <img src="https://templates.iqonic.design/booksto/html/images/user/1.jpg" />
-                        <div>
-                            <h6>Sign In</h6>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-      </nav>
+      <div className="topnav" id="myTopnav" ref={topBarRef}>
+        <Link to="/" className="active">
+          Home
+        </Link>
+        <Link to="/login">Sign In</Link>
+        <a href="javascript:void(0);" className="icon" onClick={navBarExpend}>
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
     </div>
   );
 };
