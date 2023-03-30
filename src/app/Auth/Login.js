@@ -1,6 +1,6 @@
-import AuthBtn from "./AuthBtn";
-import AuthCard from "./AuthCard";
-import AuthInput from "./AuthInput";
+import AuthBtn from "../UI/AuthBtn";
+import AuthCard from '../UI/AuthCard'
+import AuthInput from "../UI/AuthInput";
 import styles from '../../styles/Auth/Login.module.css'
 import { Link } from "react-router-dom";
 const Login = () => {

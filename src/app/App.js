@@ -86,8 +86,10 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <BooksPage />, loader: () =>{
         return BOOKS;
-      }},
+      }
+      },
       { path: "book", element: <BooksDetail />},
+      {path: 'upload', element: <ManageUpload />},
       { path: "book/pdf", element: <BookPDF />},
       { path: "category/:catId", element: <BooksPage />, loader: ({params}) =>{
           return BOOKS.filter(book =>{
@@ -103,13 +105,6 @@ const router = createBrowserRouter([
   {
     path: "/signup",
     element: <SignUp />
-  },
-  {
-    path: "/manage",
-    element: <ManageNavigation />,
-    children: [
-      {path: 'upload', element: <ManageUpload />}
-    ]
   }
 ]);
 

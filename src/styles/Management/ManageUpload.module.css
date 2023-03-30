@@ -1,0 +1,16 @@
+.upload-container{
+    width: 60%;
+    background-color: #2463c2d1;
+    padding: 50px;
+    border-radius: 5px;
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.upload-container form input{
+    outline: 2px;
+}
