@@ -12,6 +12,7 @@ import ManageUpload from "./Managment/ManageUpload";
 
 const BOOKS = [
   {
+    id:1,
     author: "John SOUMANOU",
     title: "LA GUERRE DE TROIE",
     cover_url:
@@ -19,6 +20,7 @@ const BOOKS = [
     category: 1,
   },
   {
+    id:2,
     author: "WILLIAM FAULKNER",
     title: " ABSALOM, ABSALOM!",
     cover_url:
@@ -26,6 +28,7 @@ const BOOKS = [
     category: 1,
   },
   {
+    id:3,
     author: "John SOUMANOU",
     title: "LA GUERRE DE TROIE",
     cover_url:
@@ -33,6 +36,7 @@ const BOOKS = [
     category: 1,
   },
   {
+    id:4,
     author: "John SOUMANOU",
     title: " A TIME TO KILL ",
     cover_url:
@@ -40,6 +44,7 @@ const BOOKS = [
     category: 1,
   },
   {
+    id:5,
     author: "John SOUMANOU",
     title: "THE HOUSE OF MIRTH",
     cover_url:
@@ -47,6 +52,7 @@ const BOOKS = [
     category: 1,
   },
   {
+    id:6,
     author: "John SOUMANOU",
     title: "THE HOUSE OF MIRTH",
     cover_url:
@@ -54,6 +60,7 @@ const BOOKS = [
     category: 1,
   },
   {
+    id:7,
     author: "John SOUMANOU",
     title: "THE HOUSE OF MIRTH",
     cover_url:
@@ -61,6 +68,7 @@ const BOOKS = [
     category: 2,
   },
   {
+    id:8,
     author: "John SOUMANOU",
     title: "THE HOUSE OF MIRTH",
     cover_url:
@@ -68,6 +76,7 @@ const BOOKS = [
     category: 2,
   },
   {
+    id:9,
     author: "John SOUMANOU",
     title: "THE HOUSE OF MIRTH",
     cover_url:
@@ -87,9 +96,11 @@ const router = createBrowserRouter([
         return BOOKS;
       }
       },
-      { path: "book", element: <BooksDetail />},
+      { path: "book/:bookId", element: <BooksDetail />, loader: () =>{
+
+      }},
       {path: 'upload', element: <ManageUpload />},
-      { path: "book/pdf", element: <BookPDF />},
+      { path: "book/:bookId/pdf", element: <BookPDF />},
       { path: "category/:catId", element: <BooksPage />, loader: ({params}) =>{
           return BOOKS.filter(book =>{
             return book.category === +params.catId;
