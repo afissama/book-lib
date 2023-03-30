@@ -1,12 +1,9 @@
 import BookCard from "./BookCard";
 import styles from "../../styles/Books/BooksPage.module.css";
 import { useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 
 
-function filterByCat(book, cat) {
-  return book.category === cat;
-}
 
 function filterByTitle(book, title) {
   return book.title.trim().toLowerCase().includes(title.toLowerCase());

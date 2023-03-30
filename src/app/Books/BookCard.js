@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import classes from "../../styles/Books/BookCard.module.css";
 const BookCard = (props) => {
   return (
@@ -10,13 +11,13 @@ const BookCard = (props) => {
             <div
               className={`col-6 p-0 position-relative ${classes["img-item"]}`}
             >
-              <a href="#">
+              <Link to="/book">
                 <img
                   className="img-fluid rounded w-100"
                   src={props.coverURL}
                   alt=""
                 />
-              </a>
+              </Link>
               <div className="view-book"></div>
             </div>
             <div className={`col-6 ${classes["item-text"]}`}>

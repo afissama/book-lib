@@ -8,7 +8,6 @@ import { Worker } from "@react-pdf-viewer/core";
 import Navigation from "./Navigation";
 import Login from "./Auth/Login";
 import SignUp from "./Auth/SignUp";
-import ManageNavigation from "./Managment/ManageNavigation";
 import ManageUpload from "./Managment/ManageUpload";
 
 const BOOKS = [
