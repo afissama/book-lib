@@ -18,6 +18,7 @@ const BOOKS = [
     cover_url:
       "https://templates.iqonic.design/booksto/html/images/browse-books/01.jpg",
     category: 1,
+    book_url: "/pdf/legacy-code.pdf"
   },
   {
     id:2,
@@ -26,6 +27,7 @@ const BOOKS = [
     cover_url:
       "https://templates.iqonic.design/booksto/html/images/browse-books/02.jpg",
     category: 1,
+    book_url: "/pdf/legacy-code.pdf"
   },
   {
     id:3,
@@ -34,6 +36,7 @@ const BOOKS = [
     cover_url:
       "https://templates.iqonic.design/booksto/html/images/browse-books/03.jpg",
     category: 1,
+    book_url: "/pdf/legacy-code.pdf"
   },
   {
     id:4,
@@ -42,6 +45,7 @@ const BOOKS = [
     cover_url:
       "https://templates.iqonic.design/booksto/html/images/browse-books/04.jpg",
     category: 1,
+    book_url: "/pdf/how-study.pdf"
   },
   {
     id:5,
@@ -50,6 +54,7 @@ const BOOKS = [
     cover_url:
       "https://templates.iqonic.design/booksto/html/images/browse-books/05.jpg",
     category: 1,
+    book_url: "/pdf/how-study.pdf"
   },
   {
     id:6,
@@ -58,6 +63,7 @@ const BOOKS = [
     cover_url:
       "https://templates.iqonic.design/booksto/html/images/browse-books/06.jpg",
     category: 1,
+    book_url: "/pdf/how-study.pdf"
   },
   {
     id:7,
@@ -66,6 +72,7 @@ const BOOKS = [
     cover_url:
       "https://templates.iqonic.design/booksto/html/images/browse-books/07.jpg",
     category: 2,
+    book_url: "/pdf/how-study.pdf"
   },
   {
     id:8,
@@ -74,18 +81,24 @@ const BOOKS = [
     cover_url:
       "https://templates.iqonic.design/booksto/html/images/browse-books/08.jpg",
     category: 2,
+    book_url: "/pdf/how-study.pdf"
   },
   {
     id:9,
     author: "John SOUMANOU",
-    title: "THE HOUSE OF MIRTH",
+    title: "PRAGMATIC PROGRAMER",
     cover_url:
       "https://templates.iqonic.design/booksto/html/images/browse-books/09.jpg",
     category: 2,
+    book_url: "/pdf/how-study.pdf"
   },
 ];
 
-
+const getBookByID = (id) =>{
+  return BOOKS.filter(book => {
+    return book.id === id;
+  })
+}
 
 
 const router = createBrowserRouter([
@@ -99,12 +112,12 @@ const router = createBrowserRouter([
       }
       },
       { path: "book/:bookId", element: <BooksDetail />, loader: ({params}) =>{
-          return BOOKS.filter(book => {
-            return book.id === +params.bookId;
-          })
+        return getBookByID(+params.bookId);
       }},
       {path: 'upload', element: <ManageUpload />},
-      { path: "book/:bookId/pdf", element: <BookPDF />},
+      { path: "book/:bookId/pdf", element: <BookPDF />, loader: ({params}) =>{
+        return getBookByID(+params.bookId);
+      }},
       { path: "category/:catId", element: <BooksPage />, loader: ({params}) =>{
           return BOOKS.filter(book =>{
             return book.category === +params.catId;

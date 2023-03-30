@@ -1,5 +1,5 @@
 import styles from "../../styles/Books/BooksDetail.module.css";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 export default function BooksDetail() {
 
@@ -31,7 +31,7 @@ export default function BooksDetail() {
               </div>
 
               <div className="pt-5">
-                <a href="#" className="btn btn-primary">READ THE BOOK</a>
+                <Link to={`/book/${book.id}/pdf`} className="btn btn-primary">READ THE BOOK</Link>
               </div>
             </div>
           </div>
