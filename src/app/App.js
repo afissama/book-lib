@@ -86,6 +86,8 @@ const BOOKS = [
 ];
 
 
+
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -96,8 +98,10 @@ const router = createBrowserRouter([
         return BOOKS;
       }
       },
-      { path: "book/:bookId", element: <BooksDetail />, loader: () =>{
-
+      { path: "book/:bookId", element: <BooksDetail />, loader: ({params}) =>{
+          return BOOKS.filter(book => {
+            return book.id === +params.bookId;
+          })
       }},
       {path: 'upload', element: <ManageUpload />},
       { path: "book/:bookId/pdf", element: <BookPDF />},

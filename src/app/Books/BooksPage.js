@@ -43,6 +43,7 @@ export default function BooksPage(props) {
       {filteredBooks.map((book) => {
         return (
           <BookCard
+            bookId = {book.id}
             title={book.title}
             author={book.author}
             coverURL={book.cover_url}

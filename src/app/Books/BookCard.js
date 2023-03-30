@@ -11,7 +11,7 @@ const BookCard = (props) => {
             <div
               className={`col-6 p-0 position-relative ${classes["img-item"]}`}
             >
-              <Link to="/book">
+              <Link to={`/book/${props.bookId}`}>
                 <img
                   className="img-fluid rounded w-100"
                   src={props.coverURL}
