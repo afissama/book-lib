@@ -3,3 +3,8 @@
     height: calc(100% - 30px);
     align-items: stretch;
 }
+
+.cover img{
+    width: 100%;
+    height: auto;
+}

@@ -18,7 +18,7 @@ const BOOKS = [
     cover_url:
       "https://templates.iqonic.design/booksto/html/images/browse-books/01.jpg",
     category: 1,
-    book_url: "/pdf/legacy-code.pdf"
+    book_url: "https://res.cloudinary.com/dmniahx2e/image/upload/v1680341572/books/Fairness_in_ML___presentation_beofdk.pdf"
   },
   {
     id:2,
