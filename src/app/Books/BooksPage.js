@@ -49,7 +49,7 @@ export default function BooksPage(props) {
             bookId = {book.id}
             title={book.title}
             author={book.author}
-            coverURL={book.cover_url}
+            coverURL={book.cover}
           />
         );
       })}

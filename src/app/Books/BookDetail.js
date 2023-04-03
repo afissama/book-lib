@@ -3,7 +3,8 @@ import { Link, useLoaderData } from "react-router-dom";
 
 export default function BooksDetail() {
 
-  const book = useLoaderData()[0];
+  const book = useLoaderData();
+  console.log(book);
 
   return (
     <div className="row">
@@ -11,7 +12,7 @@ export default function BooksDetail() {
         <div className="description-book align-items-top row">
           <div className="col-md-6">
             <div className={styles.cover}>
-                <img src={`${book.cover_url}`} alt=""/>
+                <img src={`${book.cover}`} alt=""/>
             </div>
           </div>
           <div className="col-md-6">
@@ -19,10 +20,7 @@ export default function BooksDetail() {
               <h3 className="mb-5">{book.title}</h3>
               <div className="pb-5">
                 <span>
-                    Monterhing in the best book testem ipsum is simply dtest in find
-                    in a of the printing and typeseting industry into to end.in find
-                    in a of the printing and typeseting industry in find to make it
-                    all done into end.
+                  {book.description}
                 </span>
               </div>
 

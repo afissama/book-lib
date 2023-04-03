@@ -5,11 +5,11 @@ import "@react-pdf-viewer/core/lib/styles/index.css";
 
 function BookPDF(props) {
 
-  const book = useLoaderData()[0];
+  const book = useLoaderData();
 
   return (
     <div className={styles['pdf-viewer']}>
-      <Viewer fileUrl={book.book_url} />
+      <Viewer fileUrl={book.pdfLink} />
     </div>
   );
 }

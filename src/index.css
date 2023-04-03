@@ -20,3 +20,11 @@ code {
 *, ::after, ::before{
   box-sizing: border-box;
 }
+
+.error{
+  color: red;
+}
+
+.submit {
+  color: blue;
+}
